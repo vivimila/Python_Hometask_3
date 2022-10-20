@@ -4,12 +4,10 @@
 # [2, 3, 4, 5, 6] => [12, 15, 16];
 # [2, 3, 5, 6] => [12, 15]
 
+listMassive = [2, 3, 4, 5, 6]
 
-listMassive = list(map(int, input("Введите числа (через пробел):\n").split()))
-#listMassive = [2, 3, 5, 6]
+result_list = []
 
-сondition = len(listMassive)//2 + 1 if len(listMassive) % 2 != 0 else len(listMassive)//2
-new_list = [listMassive[i]*listMassive[len(listMassive)-i-1] for i in range(сondition)]
-
-#ans = listMassive[::len(listMassive)-1]
-print(new_list)
+for i in range((len(listMassive)+1)//2):
+     result_list.append(listMassive[i]*listMassive[len(listMassive)-1-i])
+print(f'Произведение пар чисел = {result_list}')
